@@ -25,11 +25,46 @@ These notes are based on https://www.tutorialspoint.com/data_structures_algorith
 - newnode.next = rightnode
 
 # deletion
--  locate target node to be removed using a search alg
+- locate target node to be removed using a search alg
 - leftnode.next = targetnode.next
 - targetnode.next = NULL
 - you can delete from memory (or not)
 
 # reversing a linked list
-- TBA
 
+## Iterative Approach [O(N) time O(1) space]
+~~~
+def reverseList(self, head):
+    """
+    :type head: ListNode
+    :rtype: ListNode
+    """
+    current = head
+    l_prev = []
+    prev = None
+    while current!=None:
+        next = current.next #original next
+        current.next = prev #set my next to the previous
+        prev = current #set previous to current
+        current = next #move to next node
+    return prev
+~~~
+
+## Recursive Approach
+~~~
+def reverseList(self, head):
+    """
+    :type head: ListNode
+    :rtype: ListNode
+    """
+    #base case
+    if head==None or head.next==None:
+        return head
+    #traverse down
+    rlh = Solution.reverseList(self, head.next)
+    #traverse up
+    head.next.next = head
+    head.next = None
+    return rlh
+~~~
+        
