@@ -30,7 +30,7 @@ These notes are based on https://www.tutorialspoint.com/data_structures_algorith
 - targetnode.next = NULL
 - you can delete from memory (or not)
 
-# reversing a linked list
+# reversing a linked list (source: https://www.youtube.com/watch?v=O0By4Zq0OFc&ab_channel=BackToBackSWE)
 
 ## Iterative Approach [O(N) time O(1) space]
 ~~~
@@ -67,4 +67,18 @@ def reverseList(self, head):
     head.next = None
     return rlh
 ~~~
-        
+
+# doubly linked list
+- LinkedList has access to both First and Last
+- each node has access to both next and prev
+
+## additional basic operations
+- insert last
+- delete last
+- insert after
+- display forward
+- display backward
+
+## implementations
+- https://www.tutorialspoint.com/difference-between-singly-linked-list-and-doubly-linked-list-in-java#:~:text=Singly%20linked%20list%20allows%20traversal,allows%20element%20two%20way%20traversal.&text=As%20singly%20linked%20list%20store,per%20node(two%20pointers).
+- https://www.youtube.com/watch?v=ZlNKNSz88Nk&ab_channel=BlueTreeCode
