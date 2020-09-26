@@ -42,8 +42,31 @@ class Solution(object):
         return head
             
 #one pass?
-"""
-"""
+class Solution(object):
+    def removeNthFromEnd(self, head, n):
+        """
+        :type head: ListNode
+        :type n: int
+        :rtype: ListNode
+        """
+        if head==None or head.next==None:
+            return None
+        pointer1 = head
+        pointer2 = head
+        for i in range(n):
+            pointer2 = pointer2.next
+        if pointer2==None:
+            temp = head
+            head = temp.next
+            temp.next = None
+            return head
+        while pointer2.next!=None:
+            pointer1 = pointer1.next
+            pointer2 = pointer2.next
+        nxt = pointer1.next.next
+        pointer1.next.next = None
+        pointer1.next = nxt
+        return head
             
             
             
